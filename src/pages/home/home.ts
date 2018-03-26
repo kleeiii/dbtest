@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+
+
+
+declare var google;
 
 @Component({
   selector: 'page-home',
@@ -7,8 +11,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
+
 
 }
