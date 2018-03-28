@@ -1,23 +1,34 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+
+
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
-})
-export class HomePage {
-  splash=true;
-  //tabBarElement : any;
+selector:'page-home',
+templateUrl: 'home.html'
 
+
+})
+
+
+export class HomePage {
+  //tabBarElement: any;
+  splash = true;
+  
   constructor(public navCtrl: NavController) {
-//this.tabBarElement = document.querySelector('.tabbar');
+    //this.tabBarElement = document.querySelector('.tabbar');
   }
-  ionViewDidLoad () {
-   // this.tabBarElement.style.display = 'none';
+
+  ionViewDidLoad() {
+    //this.tabBarElement.style.display = 'none';
     setTimeout(() => {
-      this.splash=false;
-     // this.tabBarElement.style.display = 'flex';
+      this.splash = false;
+      //this.tabBarElement.style.display = 'flex';
     }, 4000);
+  }
+
+  goTabs(){
+    this.navCtrl.push("");
   }
 
 }
