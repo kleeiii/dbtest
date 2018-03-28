@@ -18,7 +18,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     ListPage,
     HospitalMapPage,
-    // TabsPage,
+    TabsPage,
     ContactPage,
     AboutPage,
   ],
@@ -32,14 +32,14 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     ListPage,
     HospitalMapPage,
-    // TabsPage,
+    TabsPage,
     ContactPage,
     AboutPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
