@@ -21,7 +21,7 @@ export class HospitalMapPage {
   ionViewDidLoad() {
     this.loadMap();
   }
-
+  
   loadMap() {
 
     let latLng = new google.maps.LatLng(41.3188151, 19.8112196);

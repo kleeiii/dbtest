@@ -9,21 +9,19 @@ import { HomePage } from '../pages/home/home';
 import { HospitalMapPage } from '../pages/hospital-map/hospital-map';
 import { ListPage } from '../pages/list/list';
 import { ContactPage } from '../pages/contact/contact';
-import { AboutPage } from '../pages/about/about';
 import { TabsPage } from '../pages/tabs/tabs';
-
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
     HospitalMapPage,
-    // TabsPage,
+    TabsPage,
     ContactPage,
-    AboutPage,
   ],
   imports: [
     BrowserModule,
+    
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -32,14 +30,13 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     ListPage,
     HospitalMapPage,
-    // TabsPage,
+    TabsPage,
     ContactPage,
-    AboutPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
