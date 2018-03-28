@@ -43,8 +43,6 @@ export class MyApp {
   openPage(page) {
     if (page.title == "Home") {
       this.nav.setRoot(TabsPage);
-    } else if (page.title == "Kontakto") {
-
     } else {
       this.nav.setRoot(page.component);
     }
