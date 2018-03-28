@@ -2,10 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { HospitalMapPage } from '../pages/hospital-map/hospital-map';
+import { ContactPage } from '../pages/contact/contact';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,9 +14,11 @@ import { HospitalMapPage } from '../pages/hospital-map/hospital-map';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  @ViewChild('myTabs') tabRef: TabsPage;
 
-  pages: Array<{title: string, component: any}>;
+  rootPage: any = TabsPage;
+
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -23,7 +26,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
+      { title: 'Spitalet', component: ListPage },
+      { title: 'Kontakto', component: ContactPage },
       { title: 'Hospital Map', component: HospitalMapPage }
     ];
 
@@ -37,6 +41,10 @@ export class MyApp {
   }
 
   openPage(page) {
-    this.nav.setRoot(page.component);
+    if (page.title == "Home") {
+      this.nav.setRoot(TabsPage);
+    } else {
+      this.nav.setRoot(page.component);
+    }
   }
 }
