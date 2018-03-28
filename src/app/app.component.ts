@@ -6,6 +6,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { HospitalMapPage } from '../pages/hospital-map/hospital-map';
+import { ContactPage } from '../pages/contact/contact';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,9 +14,11 @@ import { HospitalMapPage } from '../pages/hospital-map/hospital-map';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  @ViewChild('myTabs') tabRef: TabsPage;
+
   rootPage: any = TabsPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -24,6 +27,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Spitalet', component: ListPage },
+      { title: 'Kontakto', component: ContactPage },
       { title: 'Hospital Map', component: HospitalMapPage }
     ];
 
@@ -37,6 +41,12 @@ export class MyApp {
   }
 
   openPage(page) {
-    this.nav.setRoot(page.component);
+    if (page.title == "Home") {
+      this.nav.setRoot(TabsPage);
+    } else if (page.title == "Kontakto") {
+
+    } else {
+      this.nav.setRoot(page.component);
+    }
   }
 }

@@ -9,7 +9,6 @@ import { HomePage } from '../pages/home/home';
 import { HospitalMapPage } from '../pages/hospital-map/hospital-map';
 import { ListPage } from '../pages/list/list';
 import { ContactPage } from '../pages/contact/contact';
-import { AboutPage } from '../pages/about/about';
 import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     HospitalMapPage,
     TabsPage,
     ContactPage,
-    AboutPage,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +32,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     HospitalMapPage,
     TabsPage,
     ContactPage,
-    AboutPage
   ],
   providers: [
     StatusBar,
