@@ -19,20 +19,42 @@ export class HospitalMapPage {
   }
 
   ionViewDidLoad() {
-    this.loadMap();
+    this.initMap();
   }
-  
-  loadMap() {
 
-    let latLng = new google.maps.LatLng(41.3188151, 19.8112196);
+  // loadMap() {
 
-    let mapOptions = {
-      center: latLng,
-      zoom: 16,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
+  //   let latLng = new google.maps.LatLng(41.3188151, 19.8112196);
+  //   var uluru = {lat: 41.3188151, lng: 19.8112196};
+    
+  //   let mapOptions = {
+      
+  //     position: uluru,
+  //     center: uluru,
+  //     zoom: 16,
+  //     mapTypeId: google.maps.MapTypeId.ROADMAP
+      
+  //   }
 
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+  //   this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-  }
+  // }
+
+  //tn me shif
+  //Firebase ka ca metoda te vetat e po te lexosh dokumentacionin ne firebase.google.com per javascriptin do e kuposh 
+  //dokumentacjoni eshte ketu
+  //sepse ai i vendos  marekrat me ok
+  //po neve do te na autogjenerohen 
+
+ initMap() {
+  var uluru = {lat: 41.3188151, lng: 19.8112196};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}
 }
