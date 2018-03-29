@@ -42,19 +42,34 @@ export class HospitalMapPage {
 
   // }
 
-
+  //lat: 41.3188151, lng: 19.8112196
 
   initMap() {
-    var uluru = { lat: 41.3188151, lng: 19.8112196 };
-    //ndrysgon 
-    
+    var uluru = { lat: 41.3188151, lng: 19.8112196 }; 
+    var Tirane={lat: 41.328275, lng: 19.818420};
+    var Durres={lat: 41.324699,lng: 19.456520};
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 18,
       center: uluru
 
     });
-
-
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+      map: map
+    });
+    // Set destination, origin and travel mode.
+    var request = {
+      destination: Durres ,
+      origin: Tirane,
+      travelMode: 'DRIVING'
+    };
+    // Pass the directions request to the directions service.
+    var directionsService = new google.maps.DirectionsService();
+    directionsService.route(request, function(response, status) {
+      if (status == 'OK') {
+        // Display the route on the map.
+        directionsDisplay.setDirections(response);
+      }
+    });
     
     this.image = 'assets/icon/custom-marker.png'
     var marker = new google.maps.Marker({
@@ -62,7 +77,6 @@ export class HospitalMapPage {
       icon: this.image,
       map: map
     });
-
 
 
     
