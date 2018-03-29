@@ -1,15 +1,21 @@
-<ion-card>
+<ion-header>
 
     <ion-navbar>
         <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-        <ion-title>Lista e spitaleve sipas qyteteve te Shqiperise</ion-title>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Lista Spitale</ion-title>
     </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
         <ion-card-header (click)="toggleList()">
             Tirana
-        </ion-card-header>
+        
         <ion-card-content #cardC>
             American Hospital 1
         </ion-card-content>
-</ion-card>
+    </ion-card-header>
+    </ion-card>
+</ion-content>
