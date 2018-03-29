@@ -10,6 +10,7 @@ import { ContactPage } from '../pages/contact/contact';
 
 @Component({
   templateUrl: 'app.html'
+
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
