@@ -10,7 +10,6 @@ import { HospitalMapPage } from '../pages/hospital-map/hospital-map';
 import { ListPage } from '../pages/list/list';
 import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
-
 @NgModule({
   declarations: [
     MyApp,
@@ -22,6 +21,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   ],
   imports: [
     BrowserModule,
+    
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
