@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { HospitalMapPage } from '../pages/hospital-map/hospital-map';
 import { ContactPage } from '../pages/contact/contact';
 
+
 @Component({
   templateUrl: 'app.html'
 

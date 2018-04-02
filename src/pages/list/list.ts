@@ -1,4 +1,5 @@
-import { Component, ViewChild, OnInit, Renderer } from '@angular/core';
+import { Component } from '@angular/core';
+//, ViewChild, OnInit, Renderer
 //import { NavController, NavParams, CardContent } from 'ionic-angular';
 
 
@@ -6,31 +7,78 @@ import { Component, ViewChild, OnInit, Renderer } from '@angular/core';
   selector: 'page-list',
   templateUrl: 'list.html'
 })
-export class ListPage implements OnInit{
+export class ListPage {
+
+  //implements OnInit
+
+  listExpanded = false;
+
+  searchQuery: string = '';
+  items: string[];
   
-  listExpanded=false;
 
-  @ViewChild("cardC") CardContent:any;
- 
+  // @ViewChild("cardC") CardContent: any;
+
   //constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
- constructor(public renderer: Renderer ){
-   
- }
+  // If we navigated to this page, we will have an item available as a nav param
 
-  ngOnInit(){
-    console.log(this.CardContent.nativeElement);
-this.renderer.setElementStyle(this.CardContent.nativeElement,"webkitTransition","max-height 500ms,padding 500ms");
+  constructor() {
+    this.initializeItems();
   }
-  toggleList(){
-if(this.listExpanded){
-this.renderer.setElementStyle(this.CardContent.nativeElement,"max-height","0px");
-this.renderer.setElementStyle(this.CardContent.nativeElement,"padding", "2px 7px");
-}
-else{
-  this.renderer.setElementStyle(this.CardContent.nativeElement,"max-height","50px");
-  this.renderer.setElementStyle(this.CardContent.nativeElement,"padding", "5px 7px");
-}
-this.listExpanded=!this.listExpanded;
+
+  // ngOnInit() {
+  //   console.log(this.CardContent.nativeElement);
+  //   this.renderer.setElementStyle(this.CardContent.nativeElement, "webkitTransition", "max-height 500ms,padding 500ms");
+  // }
+  // toggleList() {
+  //   if (this.listExpanded) {
+  //     this.renderer.setElementStyle(this.CardContent.nativeElement, "max-height", "0px");
+  //     this.renderer.setElementStyle(this.CardContent.nativeElement, "padding", "2px 7px");
+  //   }
+  //   else {
+  //     this.renderer.setElementStyle(this.CardContent.nativeElement, "max-height", "50px");
+  //     this.renderer.setElementStyle(this.CardContent.nativeElement, "padding", "5px 7px");
+  //   }
+  //   this.listExpanded = !this.listExpanded;
+  // }
+//-----------------------------------------------------------------------------
+// Kjo mund te behet o nga nje json array ose mund te behet keshtu statike
+//-----------------------------------------------------------------------------
+  initializeItems() {
+    this.items = [
+      'Tirana',
+      'Durres',
+      'Berat',
+      'Diber',
+      'Shkoder',
+      'Peshkopi',
+      'Elbasan',
+      'Kruje',
+      'Saranda',
+      'Vlora',
+      'Gjirokaster',
+      'Kukes',
+      'Tropoj'
+    ];
   }
+
+  
+
+
+
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    this.initializeItems();
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      });
+    }
+  }
+
 }
