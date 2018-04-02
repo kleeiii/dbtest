@@ -26,8 +26,7 @@ import { ListcomponentComponent } from '../components/listcomponent/listcomponen
   imports: [
     BrowserModule,
     IonicModule,
-    
-    IonicModule.forRoot(MyApp),
+        IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

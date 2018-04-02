@@ -19,6 +19,7 @@ export class ListcomponentComponent implements OnInit {
   //   this.text = 'Hello World';
   // }
 
+  items: string[];
 
   accordionExapanded = false;
   @ViewChild("cc") cardContent: any;
@@ -27,7 +28,7 @@ export class ListcomponentComponent implements OnInit {
   icon: string = "arrow-forward";
 
   constructor(public renderer: Renderer) {
-
+    this.initializeItems();
   }
 
   ngOnInit() {
@@ -50,4 +51,23 @@ export class ListcomponentComponent implements OnInit {
     this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
 
   }
+
+  initializeItems() {
+    this.items = [
+      'Tirana',
+      'Durres',
+      'Berat',
+      'Diber',
+      'Shkoder',
+      'Peshkopi',
+      'Elbasan',
+      'Kruje',
+      'Saranda',
+      'Vlora',
+      'Gjirokaster',
+      'Kukes',
+      'Tropoj'
+    ];
+  }
+
 }
