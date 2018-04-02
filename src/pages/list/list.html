@@ -13,18 +13,19 @@
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-list>
         <ion-item *ngFor="let item of items">
-            <ion-label>{{ item }}</ion-label>
+            <listcomponent>
+                <!-- <ion-label>{{ item }}</ion-label> -->
 
-            <!-- Kjo do te gjenerohet automatikish  -->
-            <ion-select okText="Shko ne Hart" (click)="goHospital()" cancelText="Ktheu">
+                <!-- Kjo do te gjenerohet automatikish  -->
+                <!-- <ion-select okText="Shko ne Hart" (click)="goHospital()" cancelText="Ktheu">
                 <ion-option value="sp1">Spital 1</ion-option>
                 <ion-option value="sp2">Spital 2</ion-option>
                 <ion-option value="sp3">Spital 3</ion-option>
                 <ion-option value="sp4">Spital 4</ion-option>
                 <ion-option value="sp5">Spital 5</ion-option>
                 <ion-option value="sp6">Spital 6</ion-option>
-            </ion-select>
-
+            </ion-select> -->
+            </listcomponent>
         </ion-item>
     </ion-list>
 

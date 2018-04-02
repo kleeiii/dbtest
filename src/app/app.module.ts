@@ -11,6 +11,7 @@ import { ListPage } from '../pages/list/list';
 import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { ListcomponentComponent } from '../components/listcomponent/listcomponent';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,12 @@ import { TabsPage } from '../pages/tabs/tabs';
     HospitalMapPage,
     TabsPage,
     ContactPage,
+    ListcomponentComponent,
   ],
   imports: [
     BrowserModule,
     IonicModule,
+    
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
