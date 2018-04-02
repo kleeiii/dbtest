@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 //, ViewChild, OnInit, Renderer
 //import { NavController, NavParams, CardContent } from 'ionic-angular';
+
+import { HospitalMapPage } from '../hospital-map/hospital-map';
 
 
 @Component({
@@ -15,14 +18,14 @@ export class ListPage {
 
   searchQuery: string = '';
   items: string[];
-  
+
 
   // @ViewChild("cardC") CardContent: any;
 
-  //constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   // If we navigated to this page, we will have an item available as a nav param
 
-  constructor() {
+  //constructor() {
     this.initializeItems();
   }
 
@@ -32,18 +35,20 @@ export class ListPage {
   // }
   // toggleList() {
   //   if (this.listExpanded) {
-  //     this.renderer.setElementStyle(this.CardContent.nativeElement, "max-height", "0px");
-  //     this.renderer.setElementStyle(this.CardContent.nativeElement, "padding", "2px 7px");
+  //     this.listExpanded = !this.listExpanded;
+  //     // this.renderer.setElementStyle(this.CardContent.nativeElement, "max-height", "0px");
+  //     // this.renderer.setElementStyle(this.CardContent.nativeElement, "padding", "2px 7px");
   //   }
   //   else {
-  //     this.renderer.setElementStyle(this.CardContent.nativeElement, "max-height", "50px");
-  //     this.renderer.setElementStyle(this.CardContent.nativeElement, "padding", "5px 7px");
+  //     this.listExpanded = !this.listExpanded;
+  //     // this.renderer.setElementStyle(this.CardContent.nativeElement, "max-height", "50px");
+  //     // this.renderer.setElementStyle(this.CardContent.nativeElement, "padding", "5px 7px");
   //   }
-  //   this.listExpanded = !this.listExpanded;
   // }
-//-----------------------------------------------------------------------------
-// Kjo mund te behet o nga nje json array ose mund te behet keshtu statike
-//-----------------------------------------------------------------------------
+  // }
+  //-----------------------------------------------------------------------------
+  // Kjo mund te behet o nga nje json array ose mund te behet keshtu statike
+  //-----------------------------------------------------------------------------
   initializeItems() {
     this.items = [
       'Tirana',
@@ -62,7 +67,9 @@ export class ListPage {
     ];
   }
 
-  
+  goHospital(){
+    this.navCtrl.push(HospitalMapPage);
+  }
 
 
 
@@ -80,5 +87,6 @@ export class ListPage {
       });
     }
   }
+  
 
 }
