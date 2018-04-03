@@ -39,7 +39,7 @@ export class ListcomponentComponent implements OnInit {
   toggleAccordion() {
     if (this.accordionExapanded) {
       this.renderer.setElementStyle(this.cardContent.nativeElement, "max-height", "0px");
-      this.renderer.setElementStyle(this.cardContent.nativeElement, "padding", "0px 16px");
+      this.renderer.setElementStyle(this.cardContent.nativeElement, "padding", "0px 5px");
 
     } else {
       this.renderer.setElementStyle(this.cardContent.nativeElement, "max-height", "500px");

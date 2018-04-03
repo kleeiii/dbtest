@@ -46,8 +46,10 @@ export class HospitalMapPage {
 
   initMap() {
     var uluru = { lat: 41.3188151, lng: 19.8112196 }; 
+    
     var Tirane={lat: 41.328275, lng: 19.818420};
     var Durres={lat: 41.324699,lng: 19.456520};
+
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 18,
       center: uluru
