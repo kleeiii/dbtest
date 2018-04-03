@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
+
 declare var google;
 
 @IonicPage()
@@ -45,20 +46,26 @@ export class HospitalMapPage {
   //lat: 41.3188151, lng: 19.8112196
 
   initMap() {
-    var uluru = { lat: 41.3188151, lng: 19.8112196 }; 
-    var Tirane={lat: 41.328275, lng: 19.818420};
-    var Durres={lat: 41.324699,lng: 19.456520};
+    var location ={lat:  41.3188151, lng: 19.8112196}; 
+  var Tirane={lat:41.328209, lng:19.818061};
+  var Durres={lat:41.324716, lng:19.456588};
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 18,
-      center: uluru
+      center: location
 
+    });
+    this.image = 'assets/icon/custom-marker.png'
+    var marker = new google.maps.Marker({
+      position: location,
+      icon: this.image,
+      map: map
     });
     var directionsDisplay = new google.maps.DirectionsRenderer({
       map: map
     });
     // Set destination, origin and travel mode.
     var request = {
-      destination: Durres ,
+      destination: Durres,
       origin: Tirane,
       travelMode: 'DRIVING'
     };
@@ -70,17 +77,7 @@ export class HospitalMapPage {
         directionsDisplay.setDirections(response);
       }
     });
-    
-    this.image = 'assets/icon/custom-marker.png'
-    var marker = new google.maps.Marker({
-      position: uluru,
-      icon: this.image,
-      map: map
-    });
-
-
-    
-
-  
   }
 }
+
+

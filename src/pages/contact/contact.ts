@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-contact',
@@ -7,8 +7,16 @@ import { NavController } from 'ionic-angular';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController) {
+  Spitale: any;
 
+  constructor(public navCtrl: NavController) {
+    this.Spitale = [
+      'Nene Tereza',
+      'Ushtarak',
+      'Amerikan',
+      'Gjerman'
+      
+  ];
   }
 
 }
