@@ -11,11 +11,9 @@ import { ListPage } from '../pages/list/list';
 import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 
-<<<<<<< HEAD
-=======
 import { ListcomponentComponent } from '../components/listcomponent/listcomponent';
 
->>>>>>> 2afce93280918121b7f03e9563922c35f6ee3710
+
 @NgModule({
   declarations: [
     MyApp,
@@ -39,6 +37,7 @@ import { ListcomponentComponent } from '../components/listcomponent/listcomponen
     HospitalMapPage,
     TabsPage,
     ContactPage,
+    ListcomponentComponent,
   ],
   providers: [
     StatusBar,

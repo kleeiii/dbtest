@@ -7,7 +7,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class ContactPage {
 
-
+items:any =new Array(10);
 
   constructor(public navCtrl: NavController) {
 
