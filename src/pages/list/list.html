@@ -8,6 +8,7 @@
     </ion-navbar>
 </ion-header>
 
+<<<<<<< HEAD
 <ion-content padding>
     
     <ion-card>
@@ -21,3 +22,17 @@
     </ion-card-header>
     </ion-card>
 </ion-content>
+=======
+<ion-content no-padding>
+
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let item of items" no-padding>
+            <!-- <ion-label>{{ item }} </ion-label> -->
+            <listcomponent title="{{ item }}">
+            </listcomponent>
+
+        </ion-item>
+    </ion-list>
+</ion-content>
+>>>>>>> 2afce93280918121b7f03e9563922c35f6ee3710
