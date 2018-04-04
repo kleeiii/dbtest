@@ -10,6 +10,9 @@ import { HospitalMapPage } from '../pages/hospital-map/hospital-map';
 import { ListPage } from '../pages/list/list';
 import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
+import { BodyMappingPage } from '../pages/body-mapping/body-mapping';
+import { AllSymptomsPage } from '../pages/all-symptoms/all-symptoms';
+
 
 import { ListcomponentComponent } from '../components/listcomponent/listcomponent';
 
@@ -22,6 +25,8 @@ import { ListcomponentComponent } from '../components/listcomponent/listcomponen
     HospitalMapPage,
     TabsPage,
     ContactPage,
+    BodyMappingPage,
+    AllSymptomsPage,
     ListcomponentComponent,
   ],
   imports: [
@@ -37,6 +42,8 @@ import { ListcomponentComponent } from '../components/listcomponent/listcomponen
     HospitalMapPage,
     TabsPage,
     ContactPage,
+    BodyMappingPage,
+    AllSymptomsPage,
     ListcomponentComponent,
   ],
   providers: [
