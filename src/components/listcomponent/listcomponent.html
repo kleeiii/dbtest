@@ -11,8 +11,8 @@
     <ion-card-content #cc no-padding>
 
         <ion-list no-padding>
-            <ion-item *ngFor="let item of items">
-                <ion-label>{{ item }} </ion-label>
+            <ion-item *ngFor="let item of items" >
+                   <ion-label (click)='gotoMap()'>{{ item }} </ion-label>
             </ion-item>
         </ion-list>
     </ion-card-content>

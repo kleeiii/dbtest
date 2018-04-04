@@ -12,9 +12,9 @@
 <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 
 <ion-list>
-    <ion-item *ngFor="let item of items" >
+    <ion-item *ngFor="let items of Cities" >
         <!-- <ion-label>{{ item }} </ion-label> -->
-        <listcomponent title="{{ item }}" ></listcomponent> 
+        <listcomponent title="{{ items }}" ></listcomponent> 
 
     </ion-item>
 </ion-list>

@@ -1,5 +1,6 @@
 import { Component, Renderer, OnInit, ViewChild, Input } from '@angular/core';
-
+import { NavController } from 'ionic-angular';
+import { HospitalMapPage} from '../../pages/hospital-map/hospital-map';
 /**
  * Generated class for the ListcomponentComponent component.
  *
@@ -27,7 +28,7 @@ export class ListcomponentComponent implements OnInit {
 
   icon: string = "arrow-forward";
 
-  constructor(public renderer: Renderer) {
+  constructor(public renderer: Renderer, public navCntr: NavController) {
     this.initializeItems();
   }
 
@@ -54,20 +55,12 @@ export class ListcomponentComponent implements OnInit {
 
   initializeItems() {
     this.items = [
-      'Tirana',
-      'Durres',
-      'Berat',
-      'Diber',
-      'Shkoder',
-      'Peshkopi',
-      'Elbasan',
-      'Kruje',
-      'Saranda',
-      'Vlora',
-      'Gjirokaster',
-      'Kukes',
-      'Tropoj'
+      'Nene Tereza',
+      'Ushtarak',
+
     ];
   }
-
+gotoMap(){
+  this.navCntr.push(HospitalMapPage);
+}
 }

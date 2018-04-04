@@ -17,7 +17,7 @@ export class ListPage {
   listExpanded = false;
 
   searchQuery: string = '';
-  items: string[];
+  Cities: string[];
 
 
   // @ViewChild("cardC") CardContent: any;
@@ -26,9 +26,13 @@ export class ListPage {
   // If we navigated to this page, we will have an item available as a nav param
 
   //constructor() {
-    this.initializeItems();
+    
+    this.initializeHospitals();
+    
   }
+ 
 
+ 
   // ngOnInit() {
   //   console.log(this.CardContent.nativeElement);
   //   this.renderer.setElementStyle(this.CardContent.nativeElement, "webkitTransition", "max-height 500ms,padding 500ms");
@@ -49,8 +53,8 @@ export class ListPage {
   //-----------------------------------------------------------------------------
   // Kjo mund te behet o nga nje json array ose mund te behet keshtu statike
   //-----------------------------------------------------------------------------
-  initializeItems() {
-    this.items = [
+  initializeHospitals() {
+    this.Cities = [
       'Tirana',
       'Durres',
       'Berat',
@@ -75,14 +79,14 @@ export class ListPage {
 
   getItems(ev: any) {
     // Reset items back to all of the items
-    this.initializeItems();
+    this.initializeHospitals();
 
     // set val to the value of the searchbar
     let val = ev.target.value;
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
+      this.Cities = this.Cities.filter((item) => {
         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
       });
     }
